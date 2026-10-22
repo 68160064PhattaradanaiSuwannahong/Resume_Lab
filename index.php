@@ -1,18 +1,26 @@
 <?php
 require_once 'config/db.php';
+require_once 'auth.php';
+require_login();
+header('Cache-Control: no-store, no-cache, must-revalidate');
+$session_pid = (int)$_SESSION['profile_id'];
 
-// Student profile (starter table)
+// Student profile (only the logged-in user's profile)
 $profile = null;
-$sql = "SELECT * FROM profile LIMIT 1";
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, "SELECT * FROM profile WHERE id = ? LIMIT 1");
+mysqli_stmt_bind_param($stmt, 'i', $session_pid);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result && mysqli_num_rows($result) > 0) {
     $profile = mysqli_fetch_assoc($result);
 }
 
-// Education (starter table)
+// Education (owner-scoped)
 $educations = [];
-$sql = "SELECT * FROM education ORDER BY start_year DESC";
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, "SELECT * FROM education WHERE profile_id = ? ORDER BY start_year DESC");
+mysqli_stmt_bind_param($stmt, 'i', $session_pid);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         $educations[] = $row;
