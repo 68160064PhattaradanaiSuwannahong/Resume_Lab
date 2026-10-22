@@ -14,7 +14,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![phpMyAdmin](https://img.shields.io/badge/phpMyAdmin-6C78AF?style=for-the-badge&logo=phpmyadmin&logoColor=white)](https://www.phpmyadmin.net/)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-[![Server](https://img.shields.io/badge/🖥️_Server-Angsila_BUU-a47148?style=for-the-badge)](https://angsila.informatics.buu.ac.th)
+[![Server](https://img.shields.io/badge/🖥️_Server-Angsila_BUU-a47148?style=for-the-badge)](https://angsila.informatics.buu.ac.th/~68160064/Resume_Website/login.php)
 
 <br/>
 
@@ -53,17 +53,25 @@ register → login (password_verify + session) → owner-scoped CRUD → logout 
 
 ## 📋 Table of Contents
 
-- [✨ Overview](#-overview)
-- [🧭 Pages](#-pages)
-- [📁 Project Structure](#-project-structure)
-- [🗄️ Database Schema](#️-database-schema)
-- [🔐 Login / Logout Flow](#-login--logout-flow)
-- [🧩 Lab Tasks & SQL](#-lab-tasks--sql)
-- [⚙️ Setup](#️-setup)
-- [🧪 Test Cases](#-test-cases)
-- [🛡️ Security](#️-security)
-- [🌿 Git Workflow](#-git-workflow)
-- [📦 Deliverables](#-deliverables)
+- [☕ Resume Lab — PHP Session Login \& Skill CRUD](#-resume-lab--php-session-login--skill-crud)
+    - [Database Management · Burapha University · Faculty of Informatics](#database-management--burapha-university--faculty-of-informatics)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [✨ Overview](#-overview)
+    - [Highlights](#highlights)
+  - [🧭 Pages](#-pages)
+  - [📁 Project Structure](#-project-structure)
+  - [🗄️ Database Schema](#️-database-schema)
+  - [🔐 Login / Logout Flow](#-login--logout-flow)
+    - [How the session works](#how-the-session-works)
+  - [🧩 Lab Tasks \& SQL](#-lab-tasks--sql)
+    - [Week 1 — Skill CRUD](#week-1--skill-crud)
+    - [Week 2 — Login / Logout](#week-2--login--logout)
+    - [Extra — Owner-scoped pages](#extra--owner-scoped-pages)
+  - [⚙️ Setup](#️-setup)
+  - [🧪 Test Cases](#-test-cases)
+  - [🛡️ Security](#️-security)
+  - [🌿 Git Workflow](#-git-workflow)
+  - [📦 Deliverables](#-deliverables)
 
 ---
 
@@ -117,7 +125,7 @@ This repository continues the PHP/MySQL **Resume Lab** across two weeks of the D
 ## 📁 Project Structure
 
 ```
-DB-Week12/
+Resume_Lab/
 ├── 📄 index.php                 # Resume page (private, owner-scoped)
 ├── 🔐 auth.php                  # Session settings, require_login(), CSRF helpers
 ├── 🔐 register.php              # Sign up → profile + users rows in one transaction
